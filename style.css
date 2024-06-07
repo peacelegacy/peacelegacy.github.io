@@ -215,3 +215,98 @@ header{
     margin-left: 10px;
     padding: 2px
 }
+
+/* Merch */
+.merch-content{
+    background-color: transparent;
+    width: 100%;
+    height: 90%;
+    position: fixed;
+    z-index: 0;
+    top: 57%;
+    transform: translateY(-50%);
+    border-radius: 7px;
+    overflow:scroll !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.merch {
+    background-color: #24232c;
+    border: 2px solid #2c2b36;
+    width: 300px !important;
+    height: 450px !important;
+    position: relative;
+    z-index: 0;
+    text-align: center;
+    border-radius: 5px;
+    margin-left: 1.5%;
+    margin-top: 1.5%;
+}
+
+.merch h1 {
+    color: white;
+    font-family: Config Rounded Semibold;
+    font-size: 23px;
+    margin-top: 3%;
+}
+
+.merch p{
+    color: #979797;
+    font-family: Config Rounded Regular;
+    font-size: 20px;
+    margin-left: 10px;
+    padding: 2px;
+    margin-top: 1%
+}
+
+.merch h2 {
+    background-color:#E5612A;
+    width: 15%;
+    height: 4.5%;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 16px;
+    margin-left: 42%;
+    margin-top: 3%;
+    font-family: Config Rounded SemiBold;
+}
+
+.merch h3 {
+    background-color:transparent;
+    width: 15%;
+    height: 4.5%;
+    margin-top: 3%;
+}
+
+.merch-img{
+    width:90%;
+    height: 60%;
+    background-color: transparent;
+    margin-top: 4%;
+    cursor: pointer;
+}
+
+.merch-img:hover {
+    transform: rotate(3deg);
+    transition: 0.3s ease-in-out;
+}
+
+.view-btn {
+    width: 60%;
+    height: 10%;
+    background-color: rgb(94, 252, 88);
+    border: 2px solid rgb(113, 255, 47);
+    border-radius: 5px;
+    margin-top: 3%;
+    box-shadow: none !important;
+    cursor: pointer;
+    font-family: Config Rounded Semibold;
+    font-size: auto;
+}
+
+.view-btn:hover {
+    transform: scale(1.03);
+    transition: 0.3s ease-in-out;
+}
