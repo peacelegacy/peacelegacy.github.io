@@ -1,0 +1,9 @@
+.cont,
+.chat {
+    z-index: 1000000 !important
+}
+
+.cont .overlay .left-top {
+    margin-left: 30vw;
+    z-index: 1000000
+}
