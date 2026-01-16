@@ -1,0 +1,124 @@
+.main-pack .rarity-undefined,
+.main-pack .rarity-,
+.main-pack .item-cont,
+.main-pack .item-cont .item.rarity-0,
+.main-pack .item-cont .item.rarity-1,
+.main-pack .item-cont .item.rarity-2,
+.main-pack .item-cont .item.rarity-3,
+.main-pack .item-cont .item.rarity-4,
+.drag-wrapper .drag.item,
+.drag-wrapper .rarity-0,
+.drag-wrapper {
+  background: transparent !important;
+}
+
+.bottom .indicators {
+  margin-bottom: 9px !important;
+}
+
+.bottom .indicators .indicator-cont .indicator.hp,
+.bottom .indicators .indicator-cont .indicator.hunger {
+  background: #383838 !important;
+}
+
+.bottom .indicators .indicator-cont .indicator.hp .progress.progress-hp {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 92, 111, 1) 0%,
+    rgba(255, 48, 252, 1) 15%,
+    rgba(128, 102, 255, 1) 27%,
+    rgba(0, 221, 255, 1) 39%,
+    rgba(0, 255, 115, 1) 50%,
+    rgba(204, 255, 0, 1) 66%,
+    rgba(255, 128, 0, 1) 84%,
+    rgba(255, 15, 3, 1) 100%
+  ) !important;
+  transition: 1s ease;
+}
+
+.bottom
+  .indicators
+  .indicator-cont
+  .indicator.hunger
+  .progress.progress-hunger {
+  background: #ffa441;
+}
+
+.main-pack .item,
+.drag-wrapper {
+  backdrop-filter: blur(4px);
+  border-radius: 5px !important;
+}
+
+.main-pack .item-cont .key {
+  display: none;
+}
+
+.main-pack {
+  background: rgb(255, 255, 255, 0.01) !important;
+}
+
+.svg-icon.active-item {
+  margin-bottom: 3px;
+  border-radius: 8px !important;
+  border: solid 3px #ffb333;
+  height: 93%;
+  width: 11.2%;
+  z-index: -1 !important;
+}
+
+.svg-icon.active-item use {
+  display: none;
+}
+
+.item.rarity-undefined .quantity,
+.drag-wrapper .drag.item .quantity {
+  color: white !important;
+}
+
+.drag-wrapper .drag.item .quantity {
+  margin-right: -8px;
+}
+
+.main-pack .item-cont .item.rarity-0:after,
+.drag-wrapper .drag.item .rarity-0:after {
+  content: "Common";
+  position: absolute;
+  color: #34ff82;
+  font-size: 11px;
+  margin-top: -59px;
+  text-shadow: 0px 1px 2px black;
+}
+.main-pack .item-cont .item.rarity-1:after,
+.drag-wrapper .rarity-1:after {
+  content: "Rare";
+  position: absolute;
+  color: #6dcaff;
+  font-size: 11px;
+  margin-top: -59px;
+  text-shadow: 0px 1px 2px black;
+}
+.main-pack .item-cont .item.rarity-2:after {
+  content: "Epic";
+  position: absolute;
+  color: #d084ff;
+  font-size: 11px;
+  margin-top: -59px;
+  text-shadow: 0px 1px 2px black;
+}
+.main-pack .item-cont .item.rarity-3:after {
+  content: "Legendary";
+  position: absolute;
+  color: #ffda48;
+  font-size: 11px;
+  margin-top: -59px;
+  text-shadow: 0px 1px 2px black;
+}
+.main-pack .item-cont .item.rarity-4:after {
+  content: "Heirloom";
+  position: absolute;
+  color: #ff6565;
+  font-size: 11px;
+  margin-top: -59px;
+  text-shadow: 0px 1px 2px black;
+}
