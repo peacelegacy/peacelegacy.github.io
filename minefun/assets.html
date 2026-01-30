@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Minefun Assets</title>
+  <link rel="stylesheet" href="assets.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div id="tooltip" class="tooltip"></div>
+  <canvas id="background"></canvas>
+
+  <div class="page">
+    <section class="card">
+      <h2>MineFun.io Assets</h2>
+      <p>Browse and download MineFun.io assets</p>
+
+      <!-- Search with icon -->
+      <div class="search-wrapper">
+        <i data-lucide="search" class="search-icon"></i>
+        <input
+          type="text"
+          id="searchInput"
+          class="skin-search"
+          placeholder="Search assets"
+        />
+      </div>
+
+      <!-- Type filters -->
+      <div class="filter-tags" id="typeFilters">
+        <button class="filter-btn active" data-type="all"><i data-lucide="layout-grid"></i>All</button>
+        <button class="filter-btn" data-type="need"><i data-lucide="badge-check"></i>Need</button>
+        <button class="filter-btn" data-type="body"><i data-lucide="user"></i>Body</button>
+        <button class="filter-btn" data-type="hat"><i data-lucide="graduation-cap"></i>Hat</button>
+        <button class="filter-btn" data-type="eyes"><i data-lucide="eye"></i>Eyes</button>
+        <button class="filter-btn" data-type="hair"><i data-lucide="scissors"></i>Hair</button>
+        <button class="filter-btn" data-type="ears"><i data-lucide="ear"></i>Ears</button>
+        <button class="filter-btn" data-type="glasses"><i data-lucide="glasses"></i>Glasses</button>
+        <button class="filter-btn" data-type="beard"><i data-lucide="user-check"></i>Beard</button>
+        <button class="filter-btn" data-type="back"><i data-lucide="send-to-back"></i>Back</button>
+        <button class="filter-btn" data-type="shoulders"><i data-lucide="cat"></i>Shoulders</button>
+        <button class="filter-btn" data-type="hands"><i data-lucide="hand-fist"></i>Hands</button>
+        <button class="filter-btn" data-type="legs"><i data-lucide="person-standing"></i>Legs</button>
+        <button class="filter-btn" data-type="boots"><i data-lucide="footprints"></i>Boots</button>
+      </div>
+
+      <!-- Grid -->
+      <div class="card-holder" id="skinsGrid"></div>
+
+      <!-- Fallback message -->
+      <p
+        id="fallbackMessage"
+        style="color:var(--white); display:none; margin-top: 20px;"
+      >
+        Failed to load skins. Make sure you are running a local server and that skins.json exists.
+      </p>
+    </section>
+  </div>
+
+  <!-- Image modal -->
+  <div class="modal-overlay" id="imageModal">
+    <div class="image-modal">
+      <button class="image-close" id="imageClose">✕</button>
+      <img id="imagePreview">
+    </div>
+  </div>
+
+  <script src="assetsData.js"></script>
+  <script src="assets.js"></script>
+</body>
+</html>
