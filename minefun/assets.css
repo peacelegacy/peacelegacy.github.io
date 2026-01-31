@@ -1,14 +1,15 @@
 :root {
-  --background-1: #0d0d0d;
-  --background-2: #1a1a1a;
-  --background-3: #262626;
+  --background-1: #151619;
+  --background-2: #1e2024;
+  --background-3: #2b2d31;
   --background-4: #292929;
-  --border-1: #353535;
-  --primary-1: #517fe6;
+  --border-1: #383a40;
+  --primary-1: #5865f2;
   --primary-2: rgb(71, 113, 204);
   --primary-3: rgba(71, 113, 204, 0.315);
   --primary-4: rgba(84, 138, 255, 0.37);
   --primary-5: #b6cdff;
+  --primary-6: #4752c4;
   --warning-0: #ffd1d1;
   --warning-1: rgba(255, 80, 80, 0.35);
   --warning-2: rgba(255, 80, 80, 0.15);
@@ -29,8 +30,17 @@ body {
   overflow-x: hidden;
 }
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--background-4) transparent;
+}
+
 ::-webkit-scrollbar {
-  display: none;
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 canvas {
@@ -66,7 +76,7 @@ canvas {
 }
 
 .card-holder {
-  margin-top: 30px;
+  margin-top: -10px !important;
   display: grid;
 
   grid-template-columns: repeat(auto-fit, 11.5vw);
@@ -82,8 +92,19 @@ canvas {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(18px) scale(0.98);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+  will-change: transform, opacity;
 }
+
+.grid-box.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
 
 .grid-box:hover {
   transform: translateY(-5px);
@@ -152,7 +173,7 @@ canvas {
 }
 
 .install:hover {
-  background: var(--primary-2);
+  background: var(--primary-6);
 }
 
 .filter-tags {
@@ -194,7 +215,6 @@ canvas {
   border-color: transparent;
 }
 
-/* MODEL */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -217,8 +237,6 @@ canvas {
   opacity: 1;
   pointer-events: auto;
 }
-
-
 
 .modal {
   background: var(--background-2);
