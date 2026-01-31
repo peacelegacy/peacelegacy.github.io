@@ -9,9 +9,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const filterButtons = document.querySelectorAll("#typeFilters .filter-btn");
 
+  const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.15,
+    rootMargin: "0px 0px -60px 0px"
+  }
+);
+
+
   let currentType = "all";
 
-  // Filter buttons (HTML-defined)
   filterButtons.forEach(btn => {
     btn.onclick = () => {
       filterButtons.forEach(b => b.classList.remove("active"));
@@ -40,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    filtered.forEach(skin => {
+    filtered.forEach((skin, index) => {
       const downloadUrl = skin.modelUrl || skin.textureUrl;
       
       const card = document.createElement("div");
@@ -60,26 +75,23 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
       `;
       
-      // Make the "Download" button actually download the fill
       if (downloadUrl) {
         const btn = card.querySelector(".install");
         btn.onclick = () => {
           const a = document.createElement("a");
           a.href = downloadUrl;
-          a.download = ""; // optional: you can set a filename like `${skin.name}.png`
+          a.download = "";
           document.body.appendChild(a);
           a.click();
           document.body.removeChild(a);
         };
       }
 
-      // Image modal
       card.querySelector("img").onclick = () => {
         imagePreview.src = skin.previewUrl;
         imageModal.classList.add("active");
       };
 
-      // Tooltip
       card.onmouseenter = () => {
         tooltip.innerHTML = `
           <div>${skin.name}</div>
@@ -99,6 +111,10 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       grid.appendChild(card);
+      observer.observe(card);
+      
+      setTimeout(() => {card.classList.add("show");}, index * 60);
+
     });
   }
 
